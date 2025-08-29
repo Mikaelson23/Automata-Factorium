@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autômato-Factorium</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.24.2/dist/cytoscape.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Autômato-Factorium</h1>
+    <p>Simulador de Autômatos</p>
+
+    <label for="estados">Estados (nome,inicial,fim):</label>
+    <textarea
+      id="estados"
+      placeholder="Ex:
+q0,true,false
+q1,false,false
+q2,false,true"
+    ></textarea>
+
+    <label for="transicoes">Transições (origem,símbolo,destino):</label>
+    <textarea
+      id="transicoes"
+      placeholder="Ex:
+q0,a,q1
+q1,b,q2"
+    ></textarea>
+
+    <label for="cadeia">Cadeia a ser testada:</label>
+    <textarea id="cadeia" placeholder="Ex: 
+ab"></textarea>
+
+    <div class="buttons">
+      <button onclick="simular()">Simular</button>
+      <button onclick="alternarVisualizacao()">Ver Máquina de Turing</button>
+    </div>
+
+    <div id="resposta"></div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="fecharModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
